@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\book-exercises\book-exercises.fsproj" />
-    <ProjectReference Include="..\lecture-exercises-1\misc-exercises.fsproj" />
+    <ProjectReference Include="..\misc-exercises\misc-exercises.fsproj" />
     <ProjectReference Include="..\polynomial-exercise\polynomial-exercise.fsproj" />
     <ProjectReference Include="..\utility\utility.fsproj" />
   </ItemGroup>

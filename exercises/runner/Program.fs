@@ -11,8 +11,7 @@ let main argv =
    // listops_test.Tests
     
     // Exercises from book
-    // Test.Lecture1
-    Test.Lecture2
+    Test.BookExerciseTests
 
     // Polynomial Excersise
     // Test.AllPart1Tests

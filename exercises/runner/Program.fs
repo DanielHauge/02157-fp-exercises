@@ -12,8 +12,9 @@ let main argv =
     
     // Exercises from book
     // Test.Lecture1
+    Test.Lecture2
 
     // Polynomial Excersise
-    Test.AllPart1Tests
+    // Test.AllPart1Tests
 
     0 // return an integer exit code

@@ -23,10 +23,39 @@ module Test =
     let EvalTests = 
         printfn "Test Eval: %s" (test (eval 2 [2;3;0;1]) 16)
 
-    let AllPart1Tests =
+    let IsLegalTests =
+        printfn "IsLegal 1: %s" (test (isLegal [2;0;0;4]) true)
+        printfn "IsLegal 2: %s" (test (isLegal [2;0;0;4;0]) false)
+        printfn "IsLegal 3: %s" (test (isLegal [0;0;0;0;5]) true)
+        printfn "IsLegal 4: %s" (test (isLegal []) true)
+
+    let PruneTests =
+        printfn "Prune 1: %s" (test (prune [2;0;0;4]) [2;0;0;4])
+        printfn "Prune 2: %s" (test (prune [0;0;0;4;0;0]) [0;0;0;4])
+
+    let ToStringTest =
+        printfn "ToString Test for [2;3;4] :  %s" (toString [2;3;4])
+        printfn "ToString Test for [-2;-3;4] :  %s" (toString [-2;-3;4])
+        printfn "ToString Test for [-2;-3;4;-25;52] :  %s" (toString [-2;-3;4;-25;52])
+
+
+
+    let DerivativeTest =
+        printfn "Prune 2: %s" (test (derivative [2;2;2;2]) [2;4;6])
+
+    let ComposeTests =
+        printfn "Compose test: %s" (test (compose [2;0;0;4] [0;3;2]) [2; 0; 0; 108; 216; 144; 32])
+
+    
+
+    let AllPolynomialTests =
         AddTests
         MulCTests
         SubTests
         MulXTests
         MulTests
         EvalTests
+        ComposeTests
+
+
+    

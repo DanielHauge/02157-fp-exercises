@@ -1,6 +1,7 @@
 ﻿// Learn more about F# at http://fsharp.org
 
 open book_exercises
+open System
 open polynomial_exercise
 
 [<EntryPoint>]
@@ -11,9 +12,10 @@ let main argv =
    // listops_test.Tests
     
     // Exercises from book
-    Test.BookExerciseTests
-
+    //Test.BookExerciseTests
+    
     // Polynomial Excersise
-    // Test.AllPart1Tests
+    Test.AllPolynomialTests
+
 
     0 // return an integer exit code

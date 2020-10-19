@@ -39,8 +39,4 @@ module listops =
         | first::tail -> first
 
 
-    let rec reverse xs = 
-        match xs with
-        | [] -> []
-        | [_] -> xs
-        | head::tail -> reverse tail @ [head]
+    

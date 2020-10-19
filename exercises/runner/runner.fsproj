@@ -10,7 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\lecture-exercises-1\lecture-exercises-1.fsproj" />
+    <ProjectReference Include="..\book-exercises\book-exercises.fsproj" />
+    <ProjectReference Include="..\lecture-exercises-1\misc-exercises.fsproj" />
+    <ProjectReference Include="..\polynomial-exercise\polynomial-exercise.fsproj" />
     <ProjectReference Include="..\utility\utility.fsproj" />
   </ItemGroup>
 

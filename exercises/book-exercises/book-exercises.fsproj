@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>book_exercises</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Lecture4.fs" />
+    <Compile Include="Lecture3.fs" />
+    <Compile Include="Lecture2.fs" />
+    <Compile Include="Lecture1.fs" />
+    <Compile Include="Test.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\utility\utility.fsproj" />
+  </ItemGroup>
+
+</Project>

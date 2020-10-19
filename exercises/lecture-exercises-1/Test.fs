@@ -1,6 +1,6 @@
-﻿namespace lecture_exercises_1
+﻿namespace misc_exercises
 
-open lecture_exercises_1.listops
+open misc_exercises.listops
 open utility.helper
 module listops_test =
     let memberOfTest_1 = printfn "Test memberOf-1: %s" (test (memberOf(5,[1;2;3;4;5;6])) true)

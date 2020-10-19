@@ -1,13 +1,15 @@
 ﻿// Learn more about F# at http://fsharp.org
 
-open System
-open lecture_exercises_1
+open book_exercises
 
 [<EntryPoint>]
 let main argv =
     printfn "Running excersise tests"
 
-    // Exercise 1
-    listops_test.Tests
+    // Exercise lecture 1
+   // listops_test.Tests
+    
+    // Exercises from book
+    Test.Lecture1
 
     0 // return an integer exit code

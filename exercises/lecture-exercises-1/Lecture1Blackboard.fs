@@ -1,5 +1,4 @@
-﻿namespace lecture_exercises_1
-
+﻿namespace misc_exercises
 
 
 module listops =
@@ -14,6 +13,7 @@ module listops =
         | [] -> [x]
         | head::tail when x<head -> x::head::tail
         | head::tail -> head::insert x tail
+
 
     let sort xs = 
         
@@ -32,3 +32,15 @@ module listops =
             | _ -> merge (merge_sort x.[..(x.Length-2)]) (merge_sort x.[x.Length-1..])
 
         merge_sort xs
+
+    let first xs = 
+        match xs with
+        | [] -> null
+        | first::tail -> first
+
+
+    let rec reverse xs = 
+        match xs with
+        | [] -> []
+        | [_] -> xs
+        | head::tail -> reverse tail @ [head]

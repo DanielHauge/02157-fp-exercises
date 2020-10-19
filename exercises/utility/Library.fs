@@ -6,7 +6,7 @@ module helper =
 
     let test_message bool = (?) bool "Pass" "Fail"
 
-    let test result expected = test_message (result = expected)
+    let test result expected = if (result = expected) then test_message true else test_message false + sprintf " Actual: %A" result + sprintf " - Expected: %A" expected 
 
 
     let test_l result expected =

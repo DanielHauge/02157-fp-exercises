@@ -6,12 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Lecture1Blackboard.fs" />
-    <Compile Include="Test.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\utility\utility.fsproj" />
+    <Compile Include="Library.fs" />
   </ItemGroup>
 
 </Project>

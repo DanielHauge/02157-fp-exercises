@@ -9,9 +9,11 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "utility", "utility\utility.
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "polynomial-exercise", "polynomial-exercise\polynomial-exercise.fsproj", "{26B31931-1903-4D25-889B-5E312E651164}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "book-exercises", "book-exercises\book-exercises.fsproj", "{BC221113-C8BF-4ACB-9FE2-21375B57ECA8}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "book-exercises", "book-exercises\book-exercises.fsproj", "{BC221113-C8BF-4ACB-9FE2-21375B57ECA8}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "misc-exercises", "misc-exercises\misc-exercises.fsproj", "{1D9DB25B-9E0E-4AB9-A51C-61BB4584311C}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "misc-exercises", "misc-exercises\misc-exercises.fsproj", "{1D9DB25B-9E0E-4AB9-A51C-61BB4584311C}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "simple-company-club-exercise", "simple-company-club-exercise\simple-company-club-exercise.fsproj", "{B24CB454-9A3B-44E6-B5A4-71769657E93D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{1D9DB25B-9E0E-4AB9-A51C-61BB4584311C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D9DB25B-9E0E-4AB9-A51C-61BB4584311C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D9DB25B-9E0E-4AB9-A51C-61BB4584311C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B24CB454-9A3B-44E6-B5A4-71769657E93D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B24CB454-9A3B-44E6-B5A4-71769657E93D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B24CB454-9A3B-44E6-B5A4-71769657E93D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B24CB454-9A3B-44E6-B5A4-71769657E93D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

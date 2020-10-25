@@ -3,6 +3,7 @@
 open book_exercises
 open System
 open polynomial_exercise
+open simple_company_club_exercise
 
 [<EntryPoint>]
 let main argv =
@@ -12,10 +13,12 @@ let main argv =
    // listops_test.Tests
     
     // Exercises from book
-    Test.BookExerciseTests
+    // Test.BookExerciseTests
     
     // Polynomial Excersise
     //Test.AllPolynomialTests
 
+    // Company club exercise:
+    simple_company_club_exercise.club.test
 
     0 // return an integer exit code

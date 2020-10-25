@@ -13,3 +13,23 @@
 // numbers.
 // 3. Use let-expressions in the declaration of the division of complex numbers in order to avoid
 // repeated evaluation of identical subexpressions.
+
+
+type Complex = 
+    { 
+        real : int 
+        imaginary : int
+    }
+
+    static member (+) (a : Complex, b : Complex) = { real = a.real+b.real; imaginary = a.imaginary+b.imaginary }
+    static member (-) (a : Complex, b : Complex) = { real = a.real-b.real; imaginary = a.imaginary-b.imaginary }
+    static member (*) (a : Complex, b : Complex) = { real = a.real*b.real - a.imaginary*b.imaginary; imaginary = a.imaginary*b.real + a.real*b.imaginary }
+
+
+
+
+
+// HR 4.18 Pencil exercise
+// f -> g -> a' list
+// Hvor g er en higher order function. Den applier g på alle i listen.
+

@@ -12,10 +12,10 @@ let main argv =
    // listops_test.Tests
     
     // Exercises from book
-    //Test.BookExerciseTests
+    Test.BookExerciseTests
     
     // Polynomial Excersise
-    Test.AllPolynomialTests
+    //Test.AllPolynomialTests
 
 
     0 // return an integer exit code

@@ -34,6 +34,7 @@ module Test =
         printfn "Test lecture2-2-predicateSum: %s" (test (Lecture2.predicateSum (fun x -> x<3) [-4;-3;3;2;15;0;-15]) 5)
 
 
+
     let BookExerciseTests =
         Lecture2
 

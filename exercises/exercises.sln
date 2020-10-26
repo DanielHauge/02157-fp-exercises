@@ -13,7 +13,9 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "book-exercises", "book-exer
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "misc-exercises", "misc-exercises\misc-exercises.fsproj", "{1D9DB25B-9E0E-4AB9-A51C-61BB4584311C}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "simple-company-club-exercise", "simple-company-club-exercise\simple-company-club-exercise.fsproj", "{B24CB454-9A3B-44E6-B5A4-71769657E93D}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "simple-company-club-exercise", "simple-company-club-exercise\simple-company-club-exercise.fsproj", "{B24CB454-9A3B-44E6-B5A4-71769657E93D}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "exam-problems", "exam-problems\exam-problems.fsproj", "{A0B713CB-4295-4F1D-AF36-F265F6E0A934}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{B24CB454-9A3B-44E6-B5A4-71769657E93D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B24CB454-9A3B-44E6-B5A4-71769657E93D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B24CB454-9A3B-44E6-B5A4-71769657E93D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0B713CB-4295-4F1D-AF36-F265F6E0A934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0B713CB-4295-4F1D-AF36-F265F6E0A934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0B713CB-4295-4F1D-AF36-F265F6E0A934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0B713CB-4295-4F1D-AF36-F265F6E0A934}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

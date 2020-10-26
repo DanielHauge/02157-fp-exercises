@@ -3,28 +3,54 @@
 
 module polynomial =
     
+    
+    // Part 3 (Refactoring functions to preserve invariant.
+    // Invariant of something: eg. preserves the invariant of "IsLegal" meaning, that when inputs to a function IsLegal, if invarient is preserved the output also has IsLegal properties. It remains unchanged.
+
     // Part 1
+    type Poly = int list
 
-    // type Poly = int list
 
-    let rec add a b =
-        match (a,b) with
-        | ([],[]) -> []
-        | ([],_) -> b
-        | (_,[]) -> a
-        | (aHead::aTail, bHead::bTail) -> aHead+bHead::add aTail bTail
+    let rec reverse xs = 
+        match xs with
+        | [] -> []
+        | [_] -> xs
+        | head::tail -> reverse tail @ [head]
 
-    let rec mulC k a = 
+    let prune xs : Poly = 
+        let rec prune_rec l =
+            match l with
+            | head::tail when head = 0 -> prune_rec tail
+            | _ -> l
+
+        reverse (prune_rec (reverse xs))
+
+    // P3: polynomial degrees can cancel each other out if b contains the inverse at a degree. Pruning to ensure IsLegal property even after add.
+    let add a b =
+        let rec add_rec a b =
+            match (a,b) with
+            | ([],[]) -> []
+            | ([],[last]) -> [last]
+            | ([last],[]) -> [last]
+            | (aHead::aTail, bHead::bTail) -> aHead+bHead::add_rec aTail bTail
+            | _ -> []
+        prune (add_rec a b)
+
+    // P3: Multiply by anything other than 0 gives a new Polynomoial that is still IsLegal.
+    let rec mulC k a : Poly = 
         match a with
         | [] -> []
         | _ when k = 0 -> []
         | head::tail -> head*k::mulC k tail
 
-    let sub a b = add a (mulC -1 b)
+    // P3: Function is using add which preserves invariant IsLegal, hence this does to.
+    let sub a b : Poly = add a (mulC -1 b)
 
-    let mulX a = 0::a
+    // P3: This preserves invariant IsLegal, as it does not modify last element.
+    let mulX a : Poly = 0::a
 
-    let rec mul a b = 
+    // P3: This preserveds invariant IsLegal, as it uses add,mulC and mulX which all preserves invariant IsLegal, this does too.
+    let rec mul a b : Poly = 
         match (a,b) with
         | ([],_) -> []
         | (_,[]) -> []
@@ -35,12 +61,8 @@ module polynomial =
         | (_,0) -> 1
         | (x,n) -> x * pow x (n-1)
 
-    let rec reverse xs = 
-        match xs with
-        | [] -> []
-        | [_] -> xs
-        | head::tail -> reverse tail @ [head]
-
+    
+    // P3: Does not output a poly, hence cannot preserve invariant IsLegal.
     let eval x a = 
         let rec eval_rec ar =
              match ar with
@@ -56,14 +78,8 @@ module polynomial =
         | [last] -> last <> 0 
         | _::tail -> isLegal tail
 
-    let prune xs = 
-        let rec prune_rec l =
-            match l with
-            | head::tail when head = 0 -> prune_rec tail
-            | _ -> l
-
-        reverse (prune_rec (reverse xs))
-
+    
+    // P3: Does not output a poly, hence cannot preserve invariant IsLegal.
     let rec toString p = 
 
         let formatLed a n = 
@@ -89,18 +105,17 @@ module polynomial =
 
         if (firstElements p) > 0 then (toString_rec p 0).[2..] else (toString_rec p 0)
 
-
-    let derivative p =
+    // P3: This does not make the last element 0. As the only element that gets multiplied by 0 is the first element, and that is then skipped. This preserves the invariant IsLegal
+    let derivative p : Poly =
         let rec derivative_rec p n =
             match p with
             | head::tail -> head*n::derivative_rec tail (n+1)
-            | [last] -> [last*n]
             | [] -> []
 
         (derivative_rec p 0).[1..]
 
-
-    let compose a b =
+    // P3: Uses functions that preserves the invaraint IsLegal, this does too.
+    let compose a b : Poly =
 
         let rec p_pow p n =
             match (p,n) with 
@@ -117,4 +132,5 @@ module polynomial =
 
         compose_rec a b 0
 
-    
+   
+

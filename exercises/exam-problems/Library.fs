@@ -54,5 +54,14 @@ module Fall2013 =
         | (a,n)::tail ->  insert a n (union tail ys)
 
 
+module Fall2013Lecture5 =
+    type MultisetMap<'a when 'a : comparison> = Map<'a,int>
+
+    let inv mm = Map.forall (fun _ t -> t>0) mm
+
+    let insert a n mm = if Map.containsKey a mm then Map.add a ((Map.find a mm)+n) mm else Map.add a n mm
+
+    let union mm1 mm2 = Map.fold (fun acc k t -> insert k t acc) mm2 mm1
+
 
 

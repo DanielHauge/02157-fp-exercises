@@ -1,6 +1,6 @@
 ﻿namespace exam_problems
 
-module Summer2015 =
+module Summer2015Q2 =
 
     // Problem 2
     // 1
@@ -64,4 +64,20 @@ module Fall2013Lecture5 =
     let union mm1 mm2 = Map.fold (fun acc k t -> insert k t acc) mm2 mm1
 
 
+
+module Summer2015Q4 =
+    // Written on paper:
+    let isValidCourseDesc desc = snd desc % 5 = 0
+
+    let isValidCourseBase cb = Map.forall (fun _ desc -> isValidCourseDesc desc) cb
+
+    let disjoint a b = Set.count (Set.intersect a b) = 0
+
+    let sumEcts cs cb = Seq.sum (Set.toSeq (Set.map (fun x-> snd (Map.find x cb)) cs))
+    
+    let isValidCourseGrp cg cb = 
+        let isDisjointed = disjoint (fst cg) (snd cg) 
+        let mandatoryEcts = sumEcts (fst cg) cb
+        let optionalEcts = sumEcts (snd cg) cb
+        isDisjointed && mandatoryEcts <= 45 && optionalEcts <= 45 && mandatoryEcts+optionalEcts >= 45
 

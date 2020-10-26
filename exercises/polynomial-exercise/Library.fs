@@ -52,11 +52,14 @@ module polynomial =
         prune (add_rec a b)
 
     // P3: Multiply by anything other than 0 gives a new Polynomoial that is still IsLegal.
-    let rec mulC k a : Poly = 
-        match a with
-        | [] -> []
-        | _ when k = 0 -> []
-        | head::tail -> head*k::mulC k tail
+    //let rec mulC k a : Poly = 
+    //    match a with
+    //    | [] -> []
+    //    | _ when k = 0 -> []
+    //    | head::tail -> head*k::mulC k tail
+
+    // mulC higher order function declaration. Much smaller and succint code.
+    let mulC k a = if k=0 then [] else List.map (fun x-> x*k) a
 
     // P3: Function is using add which preserves invariant IsLegal, hence this does to.
     let sub a b : Poly = add a (mulC -1 b)

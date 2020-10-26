@@ -9,6 +9,21 @@ module polynomial =
 
     // Part 1
     type Poly = int list
+    type Degree = 
+        | MinusInf
+        | FinN of int
+
+
+    let deg p = 
+        match List.length p with
+        | 0 -> MinusInf
+        | l -> Degree.FinN (l-1)
+
+    let addD = 
+        function
+        | (Degree.MinusInf,_) -> Degree.MinusInf
+        | (_,Degree.MinusInf) ->  Degree.MinusInf
+        | (Degree.FinN aDegree ,Degree.FinN bDegree) -> Degree.FinN (aDegree+bDegree)
 
 
     let rec reverse xs = 
@@ -30,8 +45,8 @@ module polynomial =
         let rec add_rec a b =
             match (a,b) with
             | ([],[]) -> []
-            | ([],[last]) -> [last]
-            | ([last],[]) -> [last]
+            | ([],_) -> b
+            | (_,[]) -> a
             | (aHead::aTail, bHead::bTail) -> aHead+bHead::add_rec aTail bTail
             | _ -> []
         prune (add_rec a b)
@@ -133,4 +148,3 @@ module polynomial =
         compose_rec a b 0
 
    
-

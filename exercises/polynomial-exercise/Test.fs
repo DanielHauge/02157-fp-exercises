@@ -46,7 +46,21 @@ module Test =
     let ComposeTests =
         printfn "Compose test: %s" (test (compose [2;0;0;4] [0;3;2]) [2; 0; 0; 108; 216; 144; 32])
 
-    
+    let DegreeTEsts =
+        printfn "Degree test 1: %s" (test (deg [2;0;0;4]) (Degree.FinN 3))
+        printfn "Degree test 2: %s" (test (deg [2;0;0;4;5;5;5]) (Degree.FinN 6))
+        printfn "Degree test 3: %s" (test (deg [2]) (Degree.FinN 0))
+        printfn "Degree test 4: %s" (test (deg []) (Degree.MinusInf))
+        printfn "Degree equality test 1: %s" (test (deg [] < deg [2]) (true))
+        printfn "Degree equality test 2: %s" (test (deg [5;5;5] < deg [2;0;0;3]) (true))
+        printfn "Degree add test 2: %s" (test (addD (deg ([5;5;5]),(deg [2;0;0;3]))) (Degree.FinN 5))
+        printfn "Degree add test 2: %s" (test (addD (deg ([]),(deg [2;0;0;3]))) (Degree.MinusInf))
+           
+
+
+
+
+
 
     let AllPolynomialTests =
         AddTests
@@ -56,6 +70,7 @@ module Test =
         MulTests
         EvalTests
         ComposeTests
+        DegreeTEsts
 
 
     

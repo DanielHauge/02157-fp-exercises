@@ -37,3 +37,5 @@ module lecture2blackboard =
     let rec squarePlusOne elem = (pow elem 2)+1
 
     let gg = List.map squarePlusOne [2;3;4;5]
+
+    

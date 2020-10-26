@@ -16,9 +16,9 @@ let main argv =
     // Test.BookExerciseTests
     
     // Polynomial Excersise
-    //Test.AllPolynomialTests
+    Test.AllPolynomialTests
 
     // Company club exercise:
-    simple_company_club_exercise.club.test
+    //simple_company_club_exercise.club.test
 
     0 // return an integer exit code

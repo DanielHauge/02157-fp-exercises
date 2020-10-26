@@ -42,9 +42,6 @@ module club =
        | (name,description)::tail when isMemberPartOfTargetArrangement description p -> 
             let (telephoneNumber, _, _) = description
             (name,telephoneNumber)::extractTargetGroup p tail
-       | [(name,description)] when (isMemberPartOfTargetArrangement description p) -> 
-           let (telephoneNumber, _, _) = description
-           (name,telephoneNumber)::[]
        | _ -> []
 
     let test =

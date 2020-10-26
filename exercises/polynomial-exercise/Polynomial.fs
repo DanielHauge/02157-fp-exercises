@@ -1,6 +1,5 @@
 ﻿namespace polynomial_exercise
 
-
 module polynomial =
     
     
@@ -12,12 +11,15 @@ module polynomial =
     type Degree = 
         | MinusInf
         | FinN of int
+    
 
-
-    let deg p = 
+    let deg (p:Poly) : Degree = 
         match List.length p with
         | 0 -> MinusInf
         | l -> Degree.FinN (l-1)
+
+
+    
 
     let addD = 
         function
@@ -25,14 +27,18 @@ module polynomial =
         | (_,Degree.MinusInf) ->  Degree.MinusInf
         | (Degree.FinN aDegree ,Degree.FinN bDegree) -> Degree.FinN (aDegree+bDegree)
 
+    let degToString =
+        function
+        | Degree.MinusInf -> "-infinite"
+        | Degree.FinN n -> sprintf "%i" n  
 
-    let rec reverse xs = 
+    let rec reverse (xs:Poly):Poly = 
         match xs with
         | [] -> []
         | [_] -> xs
         | head::tail -> reverse tail @ [head]
 
-    let prune xs : Poly = 
+    let prune (xs:Poly) : Poly = 
         let rec prune_rec l =
             match l with
             | head::tail when head = 0 -> prune_rec tail
@@ -40,8 +46,13 @@ module polynomial =
 
         reverse (prune_rec (reverse xs))
 
+
+    let ofList (l:int list) : Poly = prune l
+    let toList (p:Poly) : int list = p
+    let ofArray (p:int array) : Poly = List.ofArray p
+
     // P3: polynomial degrees can cancel each other out if b contains the inverse at a degree. Pruning to ensure IsLegal property even after add.
-    let add a b =
+    let add (a:Poly) (b:Poly) =
         let rec add_rec a b =
             match (a,b) with
             | ([],[]) -> []
@@ -59,16 +70,16 @@ module polynomial =
     //    | head::tail -> head*k::mulC k tail
 
     // mulC higher order function declaration. Much smaller and succint code.
-    let mulC k a = if k=0 then [] else List.map (fun x-> x*k) a
+    let mulC (k:int) (a:Poly) : Poly = if k=0 then [] else List.map (fun x-> x*k) a
 
     // P3: Function is using add which preserves invariant IsLegal, hence this does to.
-    let sub a b : Poly = add a (mulC -1 b)
+    let sub (a:Poly) (b:Poly) : Poly = add a (mulC -1 b)
 
     // P3: This preserves invariant IsLegal, as it does not modify last element.
-    let mulX a : Poly = 0::a
+    let mulX (a:Poly) : Poly = 0::a
 
     // P3: This preserveds invariant IsLegal, as it uses add,mulC and mulX which all preserves invariant IsLegal, this does too.
-    let rec mul a b : Poly = 
+    let rec mul (a:Poly) (b:Poly) : Poly = 
         match (a,b) with
         | ([],_) -> []
         | (_,[]) -> []
@@ -81,7 +92,7 @@ module polynomial =
 
     
     // P3: Does not output a poly, hence cannot preserve invariant IsLegal.
-    let eval x a = 
+    let eval x (a:Poly) = 
         let rec eval_rec ar =
              match ar with
             | [] -> 0
@@ -98,7 +109,7 @@ module polynomial =
 
     
     // P3: Does not output a poly, hence cannot preserve invariant IsLegal.
-    let rec toString p = 
+    let rec toString (p:Poly) = 
 
         let formatLed a n = 
             match n with
@@ -124,7 +135,7 @@ module polynomial =
         if (firstElements p) > 0 then (toString_rec p 0).[2..] else (toString_rec p 0)
 
     // P3: This does not make the last element 0. As the only element that gets multiplied by 0 is the first element, and that is then skipped. This preserves the invariant IsLegal
-    let derivative p : Poly =
+    let derivative (p:Poly) : Poly =
         let rec derivative_rec p n =
             match p with
             | head::tail -> head*n::derivative_rec tail (n+1)
@@ -133,7 +144,7 @@ module polynomial =
         (derivative_rec p 0).[1..]
 
     // P3: Uses functions that preserves the invaraint IsLegal, this does too.
-    let compose a b : Poly =
+    let compose (a:Poly) (b:Poly) : Poly =
 
         let rec p_pow p n =
             match (p,n) with 

@@ -1,9 +1,7 @@
 ﻿// Learn more about F# at http://fsharp.org
 
 open book_exercises
-open System
 open polynomial_exercise
-open simple_company_club_exercise
 
 [<EntryPoint>]
 let main argv =
@@ -16,7 +14,8 @@ let main argv =
     // Test.BookExerciseTests
     
     // Polynomial Excersise
-    Test.AllPolynomialTests
+    //Test.AllPolynomialTests
+    // Test.PropertyBasedTesting
 
     // Company club exercise:
     //simple_company_club_exercise.club.test

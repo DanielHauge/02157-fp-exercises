@@ -2,6 +2,7 @@
 
 module Compiler =
     type Instruction = | ADD | SUB | SIGN | ABS | PUSH of int
+    type Exp = | C of float | X | Abs of Exp | Minus of Exp | Sub of Exp * Exp | Add of Exp * Exp
     type Stack = int list
 
     let intpInstr (s:Stack) (i:Instruction) : Stack = 
@@ -18,6 +19,7 @@ module Compiler =
             | [] -> []
             | head::tail when not tail.IsEmpty ->  (head - tail.Head)::tail.Tail
             | _::tail when tail.IsEmpty -> failwith "tail was empty, only 1 value"
+            | _ -> failwith "could not split"
 
         let abs xs =
             match xs with
@@ -37,7 +39,6 @@ module Compiler =
             | SIGN -> sign s
             | ABS -> abs s
             | PUSH n -> n::s 
-            | _ -> s
 
         interpret i
 

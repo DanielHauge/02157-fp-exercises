@@ -59,7 +59,6 @@ module polynomial =
             | ([],_) -> b
             | (_,[]) -> a
             | (aHead::aTail, bHead::bTail) -> aHead+bHead::add_rec aTail bTail
-            | _ -> []
         prune (add_rec a b)
 
     // P3: Multiply by anything other than 0 gives a new Polynomoial that is still IsLegal.
@@ -94,7 +93,7 @@ module polynomial =
     // P3: Does not output a poly, hence cannot preserve invariant IsLegal.
     let eval x (a:Poly) = 
         let rec eval_rec ar =
-             match ar with
+            match ar with
             | [] -> 0
             | head::tail ->  (eval_rec tail) + (head * (pow x (ar.Length-1)))
         eval_rec (reverse a)
@@ -131,6 +130,7 @@ module polynomial =
             | [last] when last > 0 -> " + " + formatLed last n
             | [last] when last < 0 -> " - " + formatLed last n
             | [] -> ""
+            | _ -> ""
 
         if (firstElements p) > 0 then (toString_rec p 0).[2..] else (toString_rec p 0)
 

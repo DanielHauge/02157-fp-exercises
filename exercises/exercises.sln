@@ -15,9 +15,11 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "misc-exercises", "misc-exer
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "simple-company-club-exercise", "simple-company-club-exercise\simple-company-club-exercise.fsproj", "{B24CB454-9A3B-44E6-B5A4-71769657E93D}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "exam-problems", "exam-problems\exam-problems.fsproj", "{A0B713CB-4295-4F1D-AF36-F265F6E0A934}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "exam-problems", "exam-problems\exam-problems.fsproj", "{A0B713CB-4295-4F1D-AF36-F265F6E0A934}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "polynomial-usage-test", "polynomial-usage-test\polynomial-usage-test.csproj", "{FBC1B4AC-3219-4BD8-89E4-D531FFE5893C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "polynomial-usage-test", "polynomial-usage-test\polynomial-usage-test.csproj", "{FBC1B4AC-3219-4BD8-89E4-D531FFE5893C}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "compiler-exercise", "compiler-exercise\compiler-exercise.fsproj", "{936A8179-001F-449A-8818-EF23156B43EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{FBC1B4AC-3219-4BD8-89E4-D531FFE5893C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBC1B4AC-3219-4BD8-89E4-D531FFE5893C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBC1B4AC-3219-4BD8-89E4-D531FFE5893C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{936A8179-001F-449A-8818-EF23156B43EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{936A8179-001F-449A-8818-EF23156B43EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{936A8179-001F-449A-8818-EF23156B43EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{936A8179-001F-449A-8818-EF23156B43EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,6 +2,7 @@
 
 open book_exercises
 open polynomial_exercise
+open compiler_exercise
 
 [<EntryPoint>]
 let main argv =
@@ -19,5 +20,8 @@ let main argv =
 
     // Company club exercise:
     //simple_company_club_exercise.club.test
+
+    Compiler.testExecution
+    printf "%i" ((3+7)+(4-5))
 
     0 // return an integer exit code

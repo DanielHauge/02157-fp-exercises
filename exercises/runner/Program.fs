@@ -21,7 +21,9 @@ let main argv =
     // Company club exercise:
     //simple_company_club_exercise.club.test
 
-    Compiler.testExecution
-    printf "%i" ((3+7)+(4-5))
+    //Compiler.testExecution
+    //printf "%i" ((3+7)+(4-5))
+
+    Lecture9.test
 
     0 // return an integer exit code

@@ -10,6 +10,7 @@
     <Compile Include="LectureBlackboard.fs" />
     <Compile Include="Lecture1Blackboard.fs" />
     <Compile Include="Test.fs" />
+    <Compile Include="Week9.fs" />
   </ItemGroup>
 
   <ItemGroup>

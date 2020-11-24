@@ -1,8 +1,6 @@
 ﻿// Learn more about F# at http://fsharp.org
 
-open book_exercises
-open polynomial_exercise
-open compiler_exercise
+open propositionallogic
 
 [<EntryPoint>]
 let main argv =
@@ -24,6 +22,8 @@ let main argv =
     //Compiler.testExecution
     //printf "%i" ((3+7)+(4-5))
 
-    Lecture9.test
+    //Lecture9.test
 
+    // propositionallogic.test
+    propositionallogic.testProperties
     0 // return an integer exit code

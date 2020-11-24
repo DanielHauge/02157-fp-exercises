@@ -14,6 +14,7 @@
     <ProjectReference Include="..\compiler-exercise\compiler-exercise.fsproj" />
     <ProjectReference Include="..\misc-exercises\misc-exercises.fsproj" />
     <ProjectReference Include="..\polynomial-exercise\polynomial-exercise.fsproj" />
+    <ProjectReference Include="..\propositionallogic\propositionallogic.fsproj" />
     <ProjectReference Include="..\simple-company-club-exercise\simple-company-club-exercise.fsproj" />
     <ProjectReference Include="..\utility\utility.fsproj" />
   </ItemGroup>

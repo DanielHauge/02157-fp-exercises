@@ -38,6 +38,36 @@ module Fall2013Q1 =
         | (a,n)::tail ->  insert a n (union tail ys)
 
 
+
+module Fall2013Q2 =
+    // f given a list of integers computes a list of tuples with the element and an accumulating integer that gets powered by 2.
+    // f : int -> 'a list -> (int * 'a) list
+    let rec f i = function 
+                | [] -> []
+                | x::xs -> (i,x)::f (i*i) xs
+
+    // g computes the first branch that satisfies predicate. Using DFS approach.
+    // g : ('a -> bool) -> 'a Tree -> 'a Tree Option
+    type 'a Tree = | LF
+                   | Br of 'a Tree * 'a * 'a Tree
+
+    let rec g p = function
+            | LF -> None
+            | Br(_,a,t) when p a -> Some t
+            | Br(t1,a,t2) -> match g p t1 with
+                             | None -> g p t2
+                             | res -> res
+
+
+    let rec f_trec i acc = function
+                    | [] -> acc
+                    | x::xs -> f_trec (i*i) ((i,x)::acc) xs
+
+    let rec f_contrec i = function
+    | [] -> []
+    | x::xs -> let contFunc = f_contrec (i*i) xs
+               (x,i)::contFunc
+
 module Fall2013Lecture5 =
     type MultisetMap<'a when 'a : comparison> = Map<'a,int>
 

@@ -113,4 +113,11 @@ module Fall2015Q2 =
     // As an example, to call g2 again, the new n: (n-1), the return of (f x) will be calculated first then be used in the recursive call, doing the work up front.
     // This consequently means the current stack frame is no longer needed. ie. return (return (return (return 5)))) == return 5. There is no longer any pending calculations needed. 
 
+    let rec g1r_cont p a k = 
+        function
+        | x::xs when p x -> g1r_cont p xs (fun res -> k (res)) a
+        | _ -> []
+
+
+
     printf "hejsa"

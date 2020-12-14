@@ -46,3 +46,43 @@ module Fall2011Q2 =
 
 
     let test = Def("x", C 5, BinOp(Id "x", "+", Id "x"))
+
+
+module Fall2011Q3 =
+    (*
+    
+    f : (int * 'a tree) ->'a tree
+    f comptutes/constructs a tree based on integer of root branch.
+    
+    *)
+
+    type 'a tree = | Lf
+                   | Br of 'a * 'a tree * 'a tree
+
+    let rec f(n,t) =
+        match t with 
+        | Lf -> Lf
+        | Br(a, t1,t2) -> if n>0 then Br(a, f(n-1, t1), f(n-1, t2)) else Lf
+
+    (*
+    
+    g : ('a -> bool) -> 'a tree -> 'a tree
+    g computes a tree that satisfies a predicate. (Filtering out branches that does not satisfy predicate)
+    
+    *)
+
+    let rec g p = function
+        | Br(a ,t1, t2) when p a -> Br(a, g p t1, g p t2)
+        | _ -> Lf
+
+    (*
+    
+    h : ('a -> 'b) -> 'a tree -> 'b tree
+    h computes a new tree which applies k to every 'a element.
+
+    *)
+
+    let rec h k = function
+        | Lf -> Lf
+        | Br(a, t1, t2) -> Br(k a, h k t1, h k t2)
+

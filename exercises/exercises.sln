@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "polynomial-usage-test", "po
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "compiler-exercise", "compiler-exercise\compiler-exercise.fsproj", "{936A8179-001F-449A-8818-EF23156B43EF}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "propositionallogic", "propositionallogic\propositionallogic.fsproj", "{3448B203-15A2-4363-BE72-CFD9D6B0AC0F}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "propositionallogic", "propositionallogic\propositionallogic.fsproj", "{3448B203-15A2-4363-BE72-CFD9D6B0AC0F}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "lambda-calculus", "lambda-calculus\lambda-calculus.fsproj", "{D93AA37D-F8B0-4A09-98E0-3A5AAFB50F8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{3448B203-15A2-4363-BE72-CFD9D6B0AC0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3448B203-15A2-4363-BE72-CFD9D6B0AC0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3448B203-15A2-4363-BE72-CFD9D6B0AC0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D93AA37D-F8B0-4A09-98E0-3A5AAFB50F8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D93AA37D-F8B0-4A09-98E0-3A5AAFB50F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D93AA37D-F8B0-4A09-98E0-3A5AAFB50F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D93AA37D-F8B0-4A09-98E0-3A5AAFB50F8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

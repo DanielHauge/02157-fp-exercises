@@ -10,12 +10,10 @@
     <Compile Include="Fall2014.fs" />
     <Compile Include="Fall2013.fs" />
     <Compile Include="Fall2015.fs" />
-    <Compile Include="Library.fs" />
-    <Compile Include="Summer2015.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Compile Include="Fall2016.fs" />
     <None Include="Summer2014.fs" />
+    <Compile Include="Summer2015.fs" />
+    <None Include="Week13.fs" />
   </ItemGroup>
 
 </Project>

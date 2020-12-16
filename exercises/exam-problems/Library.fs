@@ -1,3 +1,0 @@
-﻿namespace exam_problems
-
-  

@@ -15,8 +15,15 @@ module lambda_calculus =
     // Part 1
     
     // free: Lambda -> Set<string> 
-    let rec free t = failwith "To be implemented"
-    
+    let rec free t = 
+            
+            let rec free_acc t bvar =
+                match t with
+                | L(a,b) -> free_acc b (a::bvar)
+                | V(f) when List.exists (fun v -> v = f) bvar -> Set.ofList([f])  
+                | A(b,f) -> Set.union (free_acc b bvar) (free_acc f bvar)
+                | _ -> Set.ofList([])
+            free_acc t []
     
     
     // nextVar: string -> string --- generates a fresh variable                 

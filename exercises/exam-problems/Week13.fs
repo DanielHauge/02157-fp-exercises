@@ -1,3 +1,5 @@
+open System
+
 namespace exam_problems
 
     module exam_problems =
@@ -128,16 +130,28 @@ namespace exam_problems
         module P3May2016 =
             type Container = | Tank of float * float * float 
                              | Ball of float 
+                             | Cylinder of float * float
 
             (* Part 1 : Declare 2 values of the Container type.
-        
+                let t1 = Tank(5,5,5)
+                let b1 = Ball(5)
             *)
+            let t1 = Tank(5,5,5)
+            let b1 = Ball(5)
 
             // Part 2
-            let isWF (c:Container) : bool = failwith "not implemented"
+            let isWF (c:Container) : bool = 
+                match c with
+                | Tank(a,b,c) -> a > 0 && b > 0 && c > 0
+                | Ball(r) -> r > 0
+                | Cylinder(r,h) -> r > 0 && h > 0
 
             // Part 3
-            let volume (c:Container) : float = failwith "not implemented"
+            let volume (c:Container) : float = 
+                match c with
+                | Tank(a,b,c) -> a*b*c
+                | Ball(r) -> (4/3) * r * r * r * Math.PI
+                | Cylinder(r,h) -> h * r * r * Math.PI
 
             (* Part 4
                 Cylinder extension.
@@ -147,6 +161,9 @@ namespace exam_problems
             type Contents = string
             type Storage = Map<Name, Contents*Container>
 
+            let stor = Storage [ ("tank1", ("oil", Tank(2,2,2))), ("ball1", ("water", Ball(5))) ]
+
+
             // Part 5
             let tank1 = failwith "not implemented"
             let oil = failwith "not implemented"
@@ -154,7 +171,8 @@ namespace exam_problems
             let water = failwith "ni"
 
             // Part 6
-            let find (n:Name) (s:Storage) : Contents*Storage = failwith "ni"
+            let find (n:Name) (s:Storage) : Contents*Storage = 
+                Map.find n s
 
         module P4May16 =
             type T<'a> = L | N of T<'a> * 'a * T<'a>
